@@ -11,14 +11,17 @@
       margin: 0;
       padding: 0;
       display: flex;
-      height: 100vh;
+      font-family: 'inter';
     }
     .sidebar {
       width: 250px;
       background-color: #ffffff;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      height: 100%;
+      height: 100vh; /* Full height */
+      font-weight: 600;
+
+
     }
     .logo {
       font-size: 20px;
@@ -56,9 +59,8 @@
       border-radius: 8px;
     }
     .container {
-      flex-grow: 1;
+      flex-grow: 1; /* Allow container to grow and fill space */
       padding: 20px;
-      overflow-y: auto;
     }
     .repository-list {
       background-color: #f8f9fa;
@@ -80,7 +82,7 @@
     }
     .repository-info {
       display: flex;
-      flex-direction: column;
+      align-items: center;
     }
     .repo-badge {
       font-size: 12px;
@@ -115,10 +117,13 @@
     }
     #support {
       margin-top: auto;
-      padding-top: 20px;
+      padding-top: 300px;
     }
-    .search-bar {
-      margin-bottom: 20px;
+    #dot{
+      color: #1570ef;
+      width: 8px;
+      height: 8px;
+
     }
   </style>
 </head>
@@ -170,6 +175,8 @@
 
   </div>
 
+  
+
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h5>Repositories <small class="text-muted">33 total repositories</small></h5>
@@ -178,58 +185,52 @@
         <button class="btn btn-primary btn-add-repo">+ Add Repository</button>
       </div>
     </div>
-
-    <div class="input-group search-bar">
+    <div class="input-group mb-4">
       <input type="text" class="form-control" placeholder="Search Repositories">
     </div>
-
     <div class="repository-list">
       <div class="repository-item">
         <div class="repository-info">
           <strong>design-system</strong>
-          <span class="repo-badge repo-public">Public</span>
+          <span class="repo-badge repo-public">Public</span> <br>
           <div class="repository-meta">
-            React <span>&#x2022;</span>&nbsp; 7320 KB &nbsp; Updated 1 day ago
+            React <span id="dot">&#x2022;</span>&nbsp;&nbsp; &#9016; 7320 KB &nbsp; Updated 1 day ago
           </div>
         </div>
       </div>
-
       <div class="repository-item">
         <div class="repository-info">
           <strong>codeant-ci-app</strong>
-          <span class="repo-badge repo-private">Private</span>
+          <span class="repo-badge repo-public">Private</span> <br>
           <div class="repository-meta">
-            Python <span>&#x2022;</span>&nbsp; 4521 KB &nbsp; Updated 5 days ago
+            <br><p>Python <span id="dot">&#x2022;</span>&nbsp;&nbsp; &#9016; 4521 KB &nbsp; Updated 5 days ago</p>
           </div>
         </div>
-      </div>
-
+      </div>      
       <div class="repository-item">
         <div class="repository-info">
           <strong>analytics-dashboard</strong>
-          <span class="repo-badge repo-public">Public</span>
+          <span class="repo-badge repo-public">Private</span> <br>
           <div class="repository-meta">
-            Python <span>&#x2022;</span>&nbsp; 4521 KB &nbsp; Updated 5 days ago
+            <br><p>Python <span id="dot">&#x2022;</span>&nbsp;&nbsp;  &#9016; 4521 KB &nbsp; Updated 5 days ago</p>
           </div>
         </div>
       </div>
-
       <div class="repository-item">
         <div class="repository-info">
           <strong>mobile-app</strong>
           <span class="repo-badge repo-public">Public</span>
           <div class="repository-meta">
-            Swift <span>&#x2022;</span>&nbsp; 3096 KB &nbsp; Updated 3 days ago
+            Swift <span id="dot">&#x2022;</span>&nbsp;&nbsp; &#9016; 3096 KB &nbsp; Updated 3 days ago
           </div>
         </div>
       </div>
-
       <div class="repository-item">
         <div class="repository-info">
           <strong>e-commerce-platform</strong>
-          <span class="repo-badge repo-public">Public</span>
+          <span class="repo-badge repo-public">Private</span> <br>
           <div class="repository-meta">
-            Java <span>&#x2022;</span>&nbsp; 6210 KB &nbsp; Updated 6 days ago
+            Java <span id="dot">&#x2022;</span>&nbsp;&nbsp;  &#9016; 6210 KB &nbsp; Updated 6 days ago
           </div>
         </div>
       </div>
@@ -237,9 +238,9 @@
       <div class="repository-item">
         <div class="repository-info">
           <strong>blog-website</strong>
-          <span class="repo-badge repo-public">Public</span>
-          <div class="repository-meta">
-            HTML/CSS <span>&#x2022;</span>&nbsp; 1876 KB &nbsp; Updated 4 days ago
+          <span class="repo-badge repo-public">Public</span> <br>
+          <div class="repository-meta"> 
+            HTML/CSS <span id="dot">&#x2022;</span>&nbsp;&nbsp; &#9016; 1876 KB &nbsp; Updated 4 days ago
           </div>
         </div>
       </div>
@@ -247,14 +248,13 @@
       <div class="repository-item">
         <div class="repository-info">
           <strong>social-network</strong>
-          <span class="repo-badge repo-public">Public</span>
-          <div class="repository-meta">
-            Java <span>&#x2022;</span>&nbsp; 6210 KB &nbsp; Updated 6 days ago
+          <span class="repo-badge repo-public">Private</span> <br>
+          <div class="repository-meta"> 
+            Java <span id="dot" >&#x2022;</span>&nbsp;&nbsp; &#9016; 6210 KB &nbsp; Updated 6 days ago
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
