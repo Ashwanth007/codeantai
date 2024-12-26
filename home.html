@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repository List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      height: 100%;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+    .dropdown {
+      margin-bottom: 20px;
+    }
+    .nav-item {
+      font-size: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      color: #444;
+      text-decoration: none;
+    }
+    .nav-item:hover {
+      color: #0049c6;
+    }
+    .nav-item .icon {
+      width: 20px;
+      margin-right: 10px;
+    }
+    .active {
+      background-color: #0049c6;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    .container {
+      flex-grow: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .repository-list {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .repository-item {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .repository-item:nth-child(2) {
+      background-color: #f2f2f2;
+    }
+    .repository-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .repo-badge {
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 12px;
+      margin-left: 10px;
+    }
+    .repo-public {
+      background-color: #e7f3ff;
+      color: #007bff;
+    }
+    .repo-private {
+      background-color: #fce8f6;
+      color: #d63384;
+    }
+    .repository-meta {
+      margin-left: 20px;
+      font-family: inter;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .btn-add-repo {
+      background-color: #1570ef;
+      color: #fff;
+    }
+    strong {
+      font-family: inter;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    #support {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+    .search-bar {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo">
+      <img src="/logo.png" alt="CodeAnt Logo">
+      <span>CodeAnt AI</span>
+    </div>
+    <div class="dropdown">
+      <select class="form-select">
+        <option selected>UtkarshDhairyaPa...</option>
+        <option value="1">Profile 1</option>
+        <option value="2">Profile 2</option>
+      </select>
+    </div>
+    <a href="#" class="nav-item active">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/128/2948/2948025.png" alt="Repositories Icon">
+      Repositories
+    </a>
+    <a href="#" class="nav-item">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/128/3573/3573187.png" alt="AI Code Review Icon">
+      AI Code Review
+    </a>
+    <a href="#" class="nav-item">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/128/3222/3222791.png" alt="Cloud Security Icon">
+      Cloud Security
+    </a>
+    <a href="#" class="nav-item">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/128/18601/18601121.png" alt="How to Use Icon">
+      How to Use
+    </a>
+    <a href="#" class="nav-item">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/128/2099/2099058.png" alt="Settings Icon">
+      Settings
+    </a>
+
+    <div id="support">
+      <a href="#" class="nav-item">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/128/159/159832.png" alt="Support Icon">
+        Support
+      </a>
+      <a href="#" class="nav-item">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/128/17827/17827199.png" alt="Logout Icon">
+        Logout
+      </a>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h5>Repositories <small class="text-muted">33 total repositories</small></h5>
+      <div class="d-flex">
+        <button class="btn btn-outline-secondary me-2">Refresh All</button>
+        <button class="btn btn-primary btn-add-repo">+ Add Repository</button>
+      </div>
+    </div>
+
+    <div class="input-group search-bar">
+      <input type="text" class="form-control" placeholder="Search Repositories">
+    </div>
+
+    <div class="repository-list">
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>design-system</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            React <span>&#x2022;</span>&nbsp; 7320 KB &nbsp; Updated 1 day ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>codeant-ci-app</strong>
+          <span class="repo-badge repo-private">Private</span>
+          <div class="repository-meta">
+            Python <span>&#x2022;</span>&nbsp; 4521 KB &nbsp; Updated 5 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>analytics-dashboard</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            Python <span>&#x2022;</span>&nbsp; 4521 KB &nbsp; Updated 5 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>mobile-app</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            Swift <span>&#x2022;</span>&nbsp; 3096 KB &nbsp; Updated 3 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>e-commerce-platform</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            Java <span>&#x2022;</span>&nbsp; 6210 KB &nbsp; Updated 6 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>blog-website</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            HTML/CSS <span>&#x2022;</span>&nbsp; 1876 KB &nbsp; Updated 4 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="repository-item">
+        <div class="repository-info">
+          <strong>social-network</strong>
+          <span class="repo-badge repo-public">Public</span>
+          <div class="repository-meta">
+            Java <span>&#x2022;</span>&nbsp; 6210 KB &nbsp; Updated 6 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
